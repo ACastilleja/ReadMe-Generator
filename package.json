@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ACastilleja/ReadMe-Generator/issues"
   },
-  "homepage": "https://github.com/ACastilleja/ReadMe-Generator#readme"
+  "homepage": "https://github.com/ACastilleja/ReadMe-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
 }
