@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const generatePage = require('./src/Readme-template.js');
+const generatePage = require('./utils/Readme-template.js');
 const writeFile = require('./src/generate-Readme.js');
 
 const promptProject = portfolioData => {
@@ -126,7 +126,7 @@ const promptProject = portfolioData => {
 
 
 promptProject()
-  
+
   .then(portfolioData => {
   return generatePage (portfolioData);
   })

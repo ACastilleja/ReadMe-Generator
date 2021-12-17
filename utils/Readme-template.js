@@ -1,3 +1,4 @@
+const fs = require('fs');
 
 module.exporte = templateData => {
     const {github, project, email, description, license, install, test, using, contribution, ...header } = templateData;
