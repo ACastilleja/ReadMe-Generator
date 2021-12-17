@@ -1,8 +1,9 @@
 const inquirer = require('inquirer');
-const generatePage = require('./src/Readme-template');
-const { writeFile} = require('./src/generate-site');
+const generatePage = require('./src/Readme-template.js');
+const writeFile = require('./src/generate-Readme.js');
 
-const promptUser = () => {
+const promptProject = portfolioData => {
+  
   return inquirer.prompt([
     {
       type: 'input',
@@ -115,23 +116,27 @@ const promptUser = () => {
         }
       },   
     
-  ]);
+  ])
+  //.then(projectData => {
+   // portfolioData.push(projectData);
+    
+  //});
 };
 
 
 
-promptUser()
-  //.then(promptProject)
-  //.then(portfolioData => {
-  //  return generatePage(portfolioData);
- // })
- // .then(pageHTML => {
- //   return writeFile(pageHTML);
-//  })
+promptProject()
+  
+  .then(portfolioData => {
+  return generatePage (portfolioData);
+  })
+ .then(pageReadme => {
+    return writeFile(pageReadme);
+  });
  // .then(writeFileResponse => {
- //   console.log(writeFileResponse);
- //   return copyFile();
- // })
+   // console.log(writeFileResponse);
+    //return copyFile();
+  //})
  // .then(copyFileResponse => {
  //   console.log(copyFileResponse);
 //  })
